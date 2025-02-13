@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #242cc5;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2938dd;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="container" id="login-container">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <p id="login-error" class="error"></p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="container" id="register-container">
+        <h2>Register</h2>
+        <input type="text" id="reg-name" placeholder="Full Name" required>
+        <input type="email" id="reg-email" placeholder="Email" required>
+        <input type="password" id="reg-password" placeholder="Password" required>
+        <select id="user-type">
+            <option value="">Select User Type</option>
+            <option value="student">Student</option>
+            <option value="employee">Employee</option>
+        </select>
+        <input type="date" id="reg-dob" required>
+        <p id="dob-error" class="error"></p>
+        <button onclick="register()">Register</button>
+        <p id="register-error" class="error"></p>
+    </div>
+
+    <script>
+        function login() {
+            let username = document.getElementById("login-username").value;
+            let password = document.getElementById("login-password").value;
+            let errorElement = document.getElementById("login-error");
+
+            if (username === "" || password === "") {
+                errorElement.textContent = "Both fields are required!";
+            } else {
+                errorElement.textContent = "";
+                alert("Login Successful!");
+            }
+        }
+
+        function register() {
+            let name = document.getElementById("reg-name").value;
+            let email = document.getElementById("reg-email").value;
+            let password = document.getElementById("reg-password").value;
+            let userType = document.getElementById("user-type").value;
+            let dob = document.getElementById("reg-dob").value;
+            let dobError = document.getElementById("dob-error");
+            let registerError = document.getElementById("register-error");
+
+            if (name === "" || email === "" || password === "" || userType === "" || dob === "") {
+                registerError.textContent = "All fields are required!";
+                return;
+            } else {
+                registerError.textContent = "";
+            }
+
+            let dobDate = new Date(dob);
+            let today = new Date();
+            let age = today.getFullYear() - dobDate.getFullYear();
+            let monthDiff = today.getMonth() - dobDate.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                dobError.textContent = "You must be at least 18 years old!";
+                return;
+            } else {
+                dobError.textContent = "";
+            }
+
+            alert("Registration Successful!");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Placement Eligibility for 10 Students</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>CGPA</th>
+                <th>Eligibility</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+    </table>
+
+    <script>
+        // Sample CGPA Data for 10 Students
+        const students = [
+            { name: "Student 1", cgpa: 7.3 },
+            { name: "Student 2", cgpa: 7.8 },
+            { name: "Student 3", cgpa: 8.2 },
+            { name: "Student 4", cgpa: 7.4 },
+            { name: "Student 5", cgpa: 8.7 },
+            { name: "Student 6", cgpa: 7.6 },
+            { name: "Student 7", cgpa: 9.1 },
+            { name: "Student 8", cgpa: 7.5 },
+            { name: "Student 9", cgpa: 8.0 },
+            { name: "Student 10", cgpa: 8.9 }
+        ];
+
+        const studentTable = document.getElementById("studentTable");
+
+        students.forEach(student => {
+            const row = document.createElement("tr");
+            let status = "";
+            let bgColor = "";
+
+            // Check CGPA Range
+            if (student.cgpa >= 7.2 && student.cgpa <= 7.5) {
+                status = "❌ Not Allowed";
+                bgColor = "red";
+            } else if (student.cgpa > 7.5 && student.cgpa <= 8.5) {
+                status = "⚠️ Maybe Placed";
+                bgColor = "orange";
+            } else {
+                status = "✅ Eligible";
+                bgColor = "green";
+            }
+
+            // Populate Table Row
+            row.innerHTML = `
+                <td>${student.name}</td>
+                <td>${student.cgpa}</td>
+                <td style="background-color: ${bgColor}; color: white;">${status}</td>
+            `;
+
+            studentTable.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Page Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #c37171;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background: #865151;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 5px;
+        }
+        footer {
+            background: #9e6363;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Website</h1>
+        <p>Welcome to my HTML5 structured page!</p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Section 1 -->
+        <section>
+            <h2>About Us</h2>
+            <p>This website showcases the modern HTML5 layout using semantic tags like header, section, and footer.</p>
+        </section>
+
+        <!-- Section 2 with Articles -->
+        <section>
+            <h2>Latest Articles</h2>
+            <article>
+                <h3>Article 1: Web Development</h3>
+                <p>Web development is constantly evolving with new frameworks and technologies.</p>
+            </article>
+            <article>
+                <h3>Article 2: HTML5 Features</h3>
+                <p>HTML5 introduces semantic elements like section, article, and aside to improve document structure.</p>
+            </article>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+            <h2>Contact Us</h2>
+            <p>Email: contact@example.com</p>
+            <p>Phone: +123 456 7890</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

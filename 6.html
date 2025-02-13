@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Iframes Grid</title>
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?nature,background');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .iframe-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 5px;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 150px;
+            border: 3px solid white;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>100 Iframes Grid (10 Rows x 10 Columns)</h1>
+
+    <div class="iframe-container">
+        <!-- Generating 100 iframes -->
+        <script>
+            let websites = [
+                "https://www.wikipedia.org", "https://www.w3schools.com", "https://www.google.com",
+                "https://www.github.com", "https://www.bbc.com", "https://www.nationalgeographic.com",
+                "https://www.cnn.com", "https://www.weather.com", "https://www.medium.com",
+                "https://www.stackoverflow.com"
+            ];
+            
+            for (let i = 0; i < 100; i++) {
+                document.write(`<iframe src="${websites[i % 10]}" loading="lazy"></iframe>`);
+            }
+        </script>
+    </div>
+
+</body>
+</html>

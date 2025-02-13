@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tables Demo</title>
+  <style>
+    table {
+      width: 100%;
+      margin-bottom: 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .bordered {
+      border: 1px solid black;
+    }
+    .bordered th,
+    .bordered td {
+      border: 1px solid black;
+    }
+    .striped tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .responsive {
+      overflow-x: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1. Simple Table</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Alice</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>23</td>
+    </tr>
+  </table>
+
+  <h2>2. Table with Borders</h2>
+  <table class="bordered">
+    <tr>
+      <th>Country</th>
+      <th>Capital</th>
+    </tr>
+    <tr>
+      <td>India</td>
+      <td>New Delhi</td>
+    </tr>
+    <tr>
+      <td>USA</td>
+      <td>Washington D.C.</td>
+    </tr>
+  </table>
+
+  <h2>3. Striped Table</h2>
+  <table class="striped">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>Laptop</td>
+      <td>$800</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>$500</td>
+    </tr>
+  </table>
+
+  <h2>4. Table with Merged Cells</h2>
+  <table class="bordered">
+    <tr>
+      <th rowspan="2">Category</th>
+      <th colspan="2">Details</th>
+    </tr>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+    </tr>
+    <tr>
+      <td>Fruits</td>
+      <td>Apples</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Vegetables</td>
+      <td>Carrots</td>
+      <td>5</td>
+    </tr>
+  </table>
+
+  <h2>5. Responsive Table</h2>
+  <div class="responsive">
+    <table class="bordered">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>John Doe</td>
+        <td>john@example.com</td>
+        <td>123-456-7890</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jane Smith</td>
+        <td>jane@example.com</td>
+        <td>987-654-3210</td>
+      </tr>
+    </table>
+  </div>
+  
+</body>
+</html>
