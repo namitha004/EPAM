@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Book Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="library.js"></script> <!-- compiled from library.ts -->
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Library Book Management</h1>
+
+    <h2>Borrow Book</h2>
+    <input type="number" id="borrowId" placeholder="Enter Book ID" />
+    <button onclick="borrowBookFromInput()">Borrow</button>
+    <div id="borrowResult" class="result"></div>
+
+    <h2>Return Book</h2>
+    <input type="number" id="returnId" placeholder="Enter Book ID" />
+    <button onclick="returnBookFromInput()">Return</button>
+    <div id="returnResult" class="result"></div>
+
+    <h2>Available Books</h2>
+    <ul id="availableBooks"></ul>
+
+    <h2>Borrowed Books</h2>
+    <ul id="borrowedBooks"></ul>
+  </div>
+</body>
+</html>

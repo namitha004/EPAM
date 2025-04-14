@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generic Stack</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="stack.js"></script> <!-- compiled -->
+</head>
+<body>
+  <div class="container">
+    <h1>🧱 Generic Stack Demo</h1>
+
+    <section>
+      <h2>Number Stack</h2>
+      <input type="number" id="numInput" placeholder="Enter number" />
+      <button onclick="pushNumber()">Push</button>
+      <button onclick="popNumber()">Pop</button>
+      <ul id="numberStackList"></ul>
+    </section>
+
+    <section>
+      <h2>String Stack</h2>
+      <input type="text" id="strInput" placeholder="Enter string" />
+      <button onclick="pushString()">Push</button>
+      <button onclick="popString()">Pop</button>
+      <ul id="stringStackList"></ul>
+    </section>
+
+    <section>
+      <h2>Object Stack</h2>
+      <input type="text" id="nameInput" placeholder="Name" />
+      <input type="number" id="ageInput" placeholder="Age" />
+      <button onclick="pushObject()">Push</button>
+      <button onclick="popObject()">Pop</button>
+      <ul id="objectStackList"></ul>
+    </section>
+  </div>
+</body>
+</html>

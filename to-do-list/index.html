@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="task.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+
+    <!-- Add Task -->
+    <div>
+      <h2>Add Task</h2>
+      <input type="text" id="title" placeholder="Title" />
+      <textarea id="description" placeholder="Description"></textarea>
+      <button onclick="addTaskFromInput()">Add Task</button>
+    </div>
+
+    <!-- Task List -->
+    <div>
+      <h2>Task List</h2>
+      <ul id="taskList"></ul>
+    </div>
+
+    <!-- Mark as Completed -->
+    <div>
+      <h2>Mark as Completed</h2>
+      <input type="number" id="taskId" placeholder="Enter Task ID" />
+      <button onclick="markTaskCompletedFromInput()">Mark Completed</button>
+    </div>
+
+    <!-- Delete Task -->
+    <div>
+      <h2>Delete Task</h2>
+      <input type="number" id="deleteId" placeholder="Enter Task ID" />
+      <button onclick="deleteTaskFromInput()">Delete Task</button>
+    </div>
+  </div>
+</body>
+</html>
